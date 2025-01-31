@@ -1,0 +1,43 @@
+{
+    "name": "www",
+    "version": "0.1.0",
+    "packageManager": "yarn@4.6.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev --turbopack",
+        "build": "next build",
+        "build:analyze": "ANALYZE=true next build",
+        "start": "next start",
+        "postinstall": "next telemetry disable",
+        "lint": "next lint",
+        "ts:check": "tsc --noemit",
+        "prettier": "prettier --write 'src/**/*.{ts,tsx,css,scss}' '*.{m,}{j,t}s' package.json tsconfig.json"
+    },
+    "dependencies": {
+        "@svgr/webpack": "^8.1.0",
+        "next": "15.1.6",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "sass": "^1.83.4"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^3.2.0",
+        "@microsoft/eslint-formatter-sarif": "^3.1.0",
+        "@next/bundle-analyzer": "^15.1.6",
+        "@next/eslint-plugin-next": "^15.1.6",
+        "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+        "@types/node": "^22.12.0",
+        "@types/react": "^19.0.8",
+        "@types/react-dom": "^19.0.3",
+        "doiuse": "^6.0.5",
+        "eslint": "^9.19.0",
+        "eslint-config-next": "15.1.6",
+        "eslint-config-prettier": "^10.0.1",
+        "eslint-plugin-compat": "^6.0.2",
+        "eslint-plugin-prettier": "^5.2.3",
+        "prettier": "^3.4.2",
+        "prettier-eslint": "^16.3.0",
+        "typescript": "^5.7.3",
+        "typescript-eslint": "^8.22.0"
+    }
+}
