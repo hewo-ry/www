@@ -87,7 +87,7 @@ interface ErrorResponse {
     message: string;
 }
 
-export {
+export type {
     User,
     RecurrenceRule,
     EntityMetadata,

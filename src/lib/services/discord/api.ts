@@ -1,3 +1,4 @@
+import { getEnv } from '../../../util/env';
 import { ErrorResponse, GuildScheduledEvents } from './types';
 
 const checkAPIOutput = (data: object): GuildScheduledEvents => {
@@ -12,7 +13,7 @@ const checkAPIOutput = (data: object): GuildScheduledEvents => {
 };
 
 const getEvents = (guildId: string): Promise<GuildScheduledEvents> => {
-    const token: string | undefined = process.env.DISCORD_TOKEN;
+    const token: string = getEnv('DISCORD_TOKEN');
 
     const options: RequestInit = {};
     options.method = 'GET';

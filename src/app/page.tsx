@@ -1,9 +1,11 @@
 import { getEvents } from '@/lib/services/discord/api';
 
+import { getEnv } from '../util/env';
 import styles from './page.module.css';
 
 const Page = async () => {
-    const events = await getEvents(process.env.DISCORD_GUILD_ID);
+    const guildId = getEnv('DISCORD_GUILD_ID');
+    const events = await getEvents(guildId);
 
     return (
         <div className={styles.page}>
