@@ -1,6 +1,6 @@
 import { GuildScheduledEvents } from '../types/discord';
 
-const checkAPIOutput = (data: any): GuildScheduledEvents => {
+const checkAPIOutput = (data: object): GuildScheduledEvents => {
     if (Array.isArray(data)) {
         return data as GuildScheduledEvents;
     } else if (!Object.hasOwn(data, 'code')) {
@@ -13,7 +13,7 @@ const checkAPIOutput = (data: any): GuildScheduledEvents => {
 const getEvents = (guildId: string): Promise<GuildScheduledEvents> => {
     const token: string = process.env.DISCORD_TOKEN;
 
-    let options: RequestInit = {};
+    const options: RequestInit = {};
     options.method = 'GET';
     options.headers = {
         Authorization: `Bot ${token}`,
