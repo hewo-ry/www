@@ -1,8 +1,9 @@
-import { getEvents } from '../services/discord-api';
+import { getEvents } from '@/lib/services/discord/api';
+
 import styles from './page.module.css';
 
 const Page = async () => {
-    const events = await getEvents('609449315882106924');
+    const events = await getEvents(process.env.DISCORD_GUILD_ID);
 
     return (
         <div className={styles.page}>

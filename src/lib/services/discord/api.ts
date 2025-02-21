@@ -1,17 +1,18 @@
-import { GuildScheduledEvents } from '../types/discord';
+import { ErrorResponse, GuildScheduledEvents } from './types';
 
 const checkAPIOutput = (data: object): GuildScheduledEvents => {
     if (Array.isArray(data)) {
         return data as GuildScheduledEvents;
     } else if (!Object.hasOwn(data, 'code')) {
-        throw new Error(`Error code ${data.code}: ${data.message}`);
+        const error = data as ErrorResponse;
+        throw new Error(`Error code ${error.code}: ${error.message}`);
     } else {
         throw new Error('Unknown type encountered!');
     }
 };
 
 const getEvents = (guildId: string): Promise<GuildScheduledEvents> => {
-    const token: string = process.env.DISCORD_TOKEN;
+    const token: string | undefined = process.env.DISCORD_TOKEN;
 
     const options: RequestInit = {};
     options.method = 'GET';
