@@ -1,4 +1,5 @@
-import { getEnv } from '../../../util/env';
+import { getEnv } from '@/lib/env';
+
 import { ErrorResponse, GuildScheduledEvents } from './types';
 
 const checkAPIOutput = (data: object): GuildScheduledEvents => {

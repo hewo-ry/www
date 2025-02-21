@@ -1,6 +1,6 @@
+import { getEnv } from '@/lib/env';
 import { getEvents } from '@/lib/services/discord/api';
 
-import { getEnv } from '../util/env';
 import styles from './page.module.css';
 
 const Page = async () => {
